@@ -4,37 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <a href="">
             <img src="./assets/svg/Logo.svg" alt="logo">
         </a>
-        <ul class="header_list">
-            <li class="list_item">Main</li>
-            <li class="list_item">Rates</li>
-            <li class="list_item">Create account</li>
+        <ul class="menu">
+            <li class="menu_item">
+                <a href="" class="menu-link">Main</a>
+            </li>
+            <li class="menu_item">
+                <a href="" class="menu-link">Rates</a>
+            </li>
+            <li class="menu_item">
+                <a href="" class="menu-link">Create account</a>
+            </li>
         </ul>
     </header>
     <main>
-        <section class="section section_one">
-            <div class="div_one-left">
-                <h1>Markup achievement</h1>
-                <p class="par_one-left">The harder you work for something, the greater you’ll feel when you achieve it.</p>
-                <button class="button_one-left button_background">Learn more</button>
-            </div>
-            <img src="./assets/img/imageHero.png" alt="hero-img">;
+        <section class="section section-one">
+                <h1 class="main-title">Markup achievement</h1>
+                <p class="text">The harder you work for something, the greater you’ll feel when you achieve it.</p>
+                <button class="button">Learn more</button>
+            <img class="main-img" src="./assets/img/imageHero.png" alt="hero-img">;
         </section>
         <section>
             <h2>Rates</h2>
-            <p class="par_rates">Failure will never overtake me if my determination to succeed is strong enough.</p>
+            <p class="text">Failure will never overtake me if my determination to succeed is strong enough.</p>
             <table class="table">
                 <tr>
                     <th><span class="features">Feauters</span></th>
-                    <th><span class="span_bold">Standart</span></th>
-                    <th><span class="span_bold">Plus</span></th>
-                    <th><span class="span_bold">Pro</th>
-                </tr>rrrrrr
+                    <th><span class="span-bold">Standart</span></th>
+                    <th><span class="span-bold">Plus</span></th>
+                    <th><span class="span-bold">Pro</span></th>
+                </tr>
                 <tr>
                     <th>Theory</th>
                     <td><img src="./assets/img/Check.png" alt="check"></td>
@@ -43,14 +51,14 @@
                 </tr>
                 <tr>
                     <th>Practise</th>
-                    <td><img src="./assets/svg/Close.svg alt=" alt="close"></td>
+                    <td><img src="./assets/svg/Close.svg" alt="close"></td>
                     <td><img src="./assets/img/Check.png" alt="check"></td>
                     <td><img src="./assets/img/Check.png" alt="check"></td>
                 </tr>
                 <tr>
                     <th>Code review</th>
-                    <td><img src="./assets/svg/Close.svg alt=" alt="close"></td>
-                    <td><img src="./assets/svg/Close.svg alt=" alt="close"></td>
+                    <td><img src="./assets/svg/Close.svg" alt="close"></td>
+                    <td><img src="./assets/svg/Close.svg" alt="close"></td>
                     <td><img src="./assets/img/Check.png" alt="check"></td>
                 </tr>
                 <tr>
@@ -61,16 +69,14 @@
                 </tr>
             </table>
         </section>
-        <section class="section rates_section">
+        <section class="section create-account-section">
             <h2>Create your free account</h2>
-            <p class="par_create-account">Let us first talk about dreams. We all know that dreams do play a role in our daily lives. The majority of people pay little attention to dreams. Dreams can help us find solutions to our daily problems and see things from a different perspective. Whenever we are dreaming, we can be who or what we want to be, regardless of the fact that in real life.</p>
-            <ul class="list_create-account">
+            <p class="text">Let us first talk about dreams. We all know that dreams do play a role in our daily lives. The majority of people pay little attention to dreams. Dreams can help us find solutions to our daily problems and see things from a different perspective. Whenever we are dreaming, we can be who or what we want to be, regardless of the fact that in real life.</p>
+            <ul class="list-create-account">
                 <li>Easy setup, fast start</li>
                 <li>Free forever for core features</li>
                 <li>14-day trial of premium features</li>
             </ul>
-        </section>
-        <section class="section create_account-section">
             <form>
                 <input type="text" placeholder="Full Name">
                 <input type="email" placeholder="Email">
@@ -82,30 +88,30 @@
                     <option>Ukraine</option>
                     <option>Usa</option>
                 </select>
-                <label for="">
-                    <input type="radio" name="stack" checked>
+                <label for="frontend">
+                    <input id="frontend" type="radio" name="stack" checked>
                     Frontend
                 </label>
-                <label for="">
-                    <input type="radio" name="stack">
+                <label for="backend">
+                    <input id="backend" type="radio" name="stack">
                     Backend
                 </label>
                 <fieldset>
                     <legend>Favorite Technologies</legend>
-                    <label for="">
-                        <input type="checkbox" checked>
+                    <label for="html">
+                        <input id="html" type="checkbox" checked>
                         HTML
                     </label>
-                    <label for="">
-                        <input type="checkbox">
+                    <label for="css">
+                        <input id="css" type="checkbox">
                         CSS
                     </label>
-                    <label for="">
-                        <input type="checkbox" checked>
+                    <label for="react">
+                        <input id="react" type="checkbox" checked>
                         React
                     </label>
-                    <label for="">
-                        <input type="checkbox">
+                    <label for="sc">
+                        <input id="sc" type="checkbox">
                         Styled components
                     </label>
                 </fieldset>
