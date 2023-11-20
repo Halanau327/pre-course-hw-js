@@ -1,2 +1,1 @@
-const isPositive = (number) => (number > 0 ? 'true' : 'false');
-console.log(isPositive(-5));
+const doArrow = (value) => "Передай 5";
