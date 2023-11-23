@@ -1,10 +1,17 @@
+/* Сброс стилей */
+
 * {
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
 }
 
+/* Общие стили */
+
+html,
 body {
     font-family: 'Rubik', sans-serif;
+    font-style: normal;
 }
 
 a {
@@ -16,13 +23,28 @@ ul {
 }
 
 button {
-    border:none;
+    border: none;
     background-color: transparent;
 }
 
-header {
+.title {
+    color: #363940;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 43px;
+}
+
+.text {
+    color: #95A1BB;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+/* Стили для хедера */
+
+.header {
     background-color: #0A61F7;
-    height: 76px;
     padding: 14px 0px;
 }
 
@@ -35,19 +57,17 @@ header {
     text-transform: uppercase;
 }
 
+/* Стили для 1-й секции */
+
 .main-title {
+    columns: #363940;
     font-size: 58px;
     font-weight: 500;
     line-height: 68px;
-    text-align: left;
     margin-bottom: 30px;
 }
 
-.text {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 22px;
-    text-align: left;
+.main .text {
     margin-bottom: 40px;
 }
 
@@ -55,17 +75,180 @@ header {
     color: #FFFFFF;
     width: 152px;
     height: 50px;
-    top: 578px;
-    left: 130px;
     border-radius: 4px;
     background: #0A61F7;
     font-size: 14px;
     font-weight: 500;
     line-height: 20px;
     letter-spacing: 1.4px;
-    text-align: center; 
+    text-transform: uppercase;
 }
 
-.main-img {
+/* Стили для 2-й секции */
 
+.rates-section {
+    background-color: #F9FAFC;
+    padding: 100px 0;
+}
+
+.rates-section .title {
+    margin-bottom: 20px;
+}
+
+.rates-section .text {
+    margin-bottom: 40px;
+}
+
+.table {
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #95A1BB;
+    width: 240px;
+    padding: 15px 0px;
+    text-align: center;
+}
+
+.table-subtitle {
+    color: #363940;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.table-subtitle.gray {
+    color: #95A1BB;
+}
+
+.table-link {
+    color: #0A61F7;
+}
+
+.table-button {
+    border: 1px solid #0A61F7;
+    color: #0A61F7;
+    padding: 8px 0;
+    width: 140px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 1.4;
+}
+
+.table-button.active {
+    background-color: #0A61F7;
+    color: #FFFFFF;
+}
+
+.table-footer td {
+    padding: 30px 0;
+}
+
+/* Стили для 3-й секции */
+
+.create-account-section {
+    padding: 100px 0;
+}
+
+.create-account-section .title {
+    margin-bottom: 50px;
+}
+
+.create-account-section .text {
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+.list-item {
+    list-style-image: url("./assets/svg/Check.svg");
+    margin-left: 30px;
+    margin-bottom: 15px;
+    color: #363940;
+}
+
+form {
+    width: 100%;
+    max-width: 500px;
+}
+
+input,
+select,
+fieldset,
+textarea {
+    border: 1px solid #95A1BB;
+    padding: 14px 15px;
+    border-radius: 4px;
+}
+
+input,
+select,
+fieldset,
+textarea,
+label,
+legend,
+input::placeholder,
+select::placeholder,
+textarea::placeholder {
+    color: #95A1BB;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    font-family: inherit;
+}
+
+input[type="text"] {
+    width: 100%;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+    width: 230px;
+    height: 50px;
+}
+
+fieldset {
+    width: 100%;
+    padding: 30px 15px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 80px;
+    resize: none;
+}
+
+form .button {
+    width: 100%;
+}
+
+select {
+    background: url(./assets/svg/Arrow-down.svg) no-repeat right 15px top 50%;
+    appearance: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: url(./assets/svg/Calendar.svg) no-repeat;
+}
+
+/* Стили футера */
+
+.footer {
+    background-color: #0A61F7;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-small {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
 }

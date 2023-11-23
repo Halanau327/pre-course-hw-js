@@ -104,7 +104,7 @@ function renderCards(cards) {
   renderCardsHeader();
 
   for (let i = 0; i < cards.length; i++) {
-    const divElement = document.createElement('div');
+    const divElement = document.createElement("div");
     const cardElement = createCardElement(cards[i]);
     divElement.appendChild(cardElement);
 
@@ -131,86 +131,92 @@ function createCardElement(card) {
   cardElement.appendChild(cardTypeElement);
 
   const br1 = document.createElement("br");
-
-
   cardElement.appendChild(br1);
 
-const networkLogo = document.createElement('img');
+const networkLogo = document.createElement("img");
   switch (card.networkType) {
     case "visa":
-      networkLogo.src = '/lessons zoom/Lesson2_js/visa_logo.png';
+      networkLogo.src = "visa_logo.png";
       break;
     case "mastercard":
-      networkLogo.src = '/lessons zoom/js/mastercard_logo.png';
+      networkLogo.src = "mastercard_logo.png";
       break;
   }
   
   cardElement.appendChild(networkLogo);
-  
+
+  const br2 = document.createElement("br");
+  cardElement.appendChild(br2);
+
+  const cardCurrentBalance = document.createElement("b");
+  cardCurrentBalance.innerText = "current balance:";
+  cardElement.appendChild(cardCurrentBalance);
+
+  let currencySign = "";
+
+  switch (card.currencyType) {
+    case "USD":
+      currencySign = "💵";
+      break;
+    case "EUR":
+      currencySign = "💶";
+      break;
+    case "GBP":
+      currencySign = "💷";
+      break;
+  }
+
+  const currencySpan = document.createElement("span");
+  currencySpan.innerText = currencySign + card.currentBalance;
+
+  cardElement.appendChild(currencySpan);
+
+  const br3 = document.createElement("br");
+  cardElement.appendChild(br3);
+
+  const cardNumberElement = document.createElement("h4");
+  cardNumberElement.innerText = card.number;
+  cardElement.appendChild(cardNumberElement);
+
+  const expirationDateElement = document.createElement("span");
+  expirationDateElement.innerText = card.expirationMonth + "/" + card.expirationYear;
+  cardElement.appendChild(expirationDateElement);
+
   return cardElement;
-
-  // document.write(networkLogo);
-  // document.write("<b>", "current balance", "</b>", "<br>");
-
-  // let currencySign = "";
-
-  // switch (card.currencyType) {
-  //   case "USD":
-  //     currencySign = "💵";
-  //     break;
-  //   case "EUR":
-  //     currencySign = "💶";
-  //     break;
-  //   case "GBP":
-  //     currencySign = "💷";
-  //     break;
-  // }
-
-
-  // document.write("<span>", currencySign + card.currentBalance, "</span>", "<br>");
-  // document.write("<h4>", card.number, "</h4>");
-  // document.write(
-  //   "<span>",
-  //   card.expirationMonth,
-  //   "/",
-  //   card.expirationYear,
-  //   "</span>"
-  // );
-
 };
 
 function createCardTransactionsElement(transactions) {
-  const ulElement = document.createElement('ul');
+  const historyTransactionsContainer = document.createElement("div");
 
+  const h2Element = document.createElement("h2");
+  h2Element.innerText = "History Transaction";
+  historyTransactionsContainer.appendChild(h2Element);
 
-  // document.write("<h2>", "History Transaction", "</h2>");
-  // document.write("<ul>");
+  const ulElement = document.createElement("ul");
 
   for (let j = 0; j < transactions.length; j++) {
     const transactionElement = createTransactionsElement(transactions[j])
     ulElement.appendChild(transactionElement);
-  }
+  };
 
-  return ulElement;
+  historyTransactionsContainer.appendChild(ulElement);
 
-
-  // document.write("</ul>");
-  // document.write("</div>");
-  // document.write("<hr>");
+  return historyTransactionsContainer;
 };
 
 function createTransactionsElement(transaction) {
   const transactionElement = document.createElement('li');
   transactionElement.innerText = transaction.title + ", " + transaction.date;
+  
+const amountElement = document.createElement("span");
+amountElement.innerText =  transaction.amount;
+  if (transaction.amount > 0) {
+    amountElement.classList.add("income");
+  } else {
+    amountElement.classList.add("outcome");
+  };
 
-  // document.write("<li>", transaction.title, ", ", transaction.date, ",");
+  transactionElement.appendChild(amountElement);
+  
   return transactionElement;
-  // условный рендеринг
-  // if (transaction.amount > 0) {
-  //   document.write('<span class="income">', transaction.amount, "</span>");
-  // } else {
-  //   document.write('<span class="outcome">', transaction.amount, "</span>");
-  // }
-
-  // document.write("</li>");
 }; 
