@@ -5,5 +5,5 @@ const numbers = [
 ];
 
 
-const result = numbers.map((row) => row.filter(num => num % 2 === 0));
-console.log(result);
+const results = numbers.map((row) => row.filter(num => num % 2 === 0));
+console.log(results);
