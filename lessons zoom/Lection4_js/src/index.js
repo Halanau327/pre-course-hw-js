@@ -1,6 +1,6 @@
 import { subscribe } from "./data.js";
 import { renderPlaylist } from "./components/playlist.js";
-import { renderFilterPanel} from "./components/filter-panel.js";
+import { renderFilterPanel} from "./components/filter-panel/filter-panel.js";
 
 const rootElement = document.querySelector("#root");
 
