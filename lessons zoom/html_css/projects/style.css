@@ -18,6 +18,10 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 ul {
     list-style: none;
 }
@@ -25,6 +29,12 @@ ul {
 button {
     border: none;
     background-color: transparent;
+    cursor:pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-5px);
 }
 
 .title {
@@ -48,6 +58,12 @@ button {
     padding: 14px 0px;
 }
 
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .menu-link {
     color: #FFFFFF;
     font-size: 12px;
@@ -55,6 +71,11 @@ button {
     line-height: 20px;
     letter-spacing: 1.4px;
     text-transform: uppercase;
+}
+
+.menu {
+    display: flex;
+    gap: 24px;
 }
 
 /* Стили для 1-й секции */
@@ -84,11 +105,33 @@ button {
     text-transform: uppercase;
 }
 
+.main-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 800px;
+}
+
+.main-img {
+    align-self: flex-end;
+}
+
+.main .text {
+    margin-bottom: 40px;
+    max-width: 380px;
+}
+
 /* Стили для 2-й секции */
 
 .rates-section {
     background-color: #F9FAFC;
     padding: 100px 0;
+}
+
+.rates-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .rates-section .title {
@@ -175,6 +218,9 @@ td {
 form {
     width: 100%;
     max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 input,
@@ -212,6 +258,8 @@ input[type="date"],
 select {
     width: 230px;
     height: 50px;
+    flex-grow: 1;
+    cursor:pointer;
 }
 
 fieldset {
@@ -238,6 +286,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background: url(./assets/svg/Calendar.svg) no-repeat;
 }
 
+.account-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stack,
+fieldset {
+    display: flex;
+    column-gap: 30px;
+}
+
+.fields-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 /* Стили футера */
 
 .footer {
@@ -252,3 +316,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-weight: 400;
     line-height: 22px;
 }
+
+.container {
+    height: 100%;
+    width: 100%;
+    max-width: 1170px;
+    padding: 0 15 px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid red;
+}
+
