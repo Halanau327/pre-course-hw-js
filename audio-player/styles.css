@@ -4,17 +4,32 @@
     box-sizing: border-box;
 }
 
+/* header */
+
+.headerContainer {
+    background-color: #1A1A1ACC;
+}
+
 .headerWrapper {
     display: flex;
     flex-direction: row;
-    margin-left: 64px;
     padding: 12px 0;
     color: #F6BD41;
     font-size: 18px;
     font-weight: 700;
     line-height: 21px;
+    margin: 0 auto;
 }
 
 .headerTitle {
     margin-left: 8px;
+}
+
+/* add playlist */
+
+.titleWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
 }
