@@ -6,10 +6,11 @@ addEventListener(renderApp);
 
 
 export function renderApp() {
-  const currentUser = getCurrentUser();
-  const cards = getCards();
+  const currentUser = getCurrentUser(); // вызываем текущего пользователя (данные в data)
+  const cards = getCards(); // получаем массив
 
   const rootElement = document.querySelector('#root');
+  rootElement.innerHTML = '';
   const headerElement = renderHeader(currentUser.name, currentUser.balance);
   rootElement.appendChild(headerElement);
 

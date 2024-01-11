@@ -38,7 +38,7 @@ export function subscribe(subscriberCallback) {
 }
 
 // getter
-export function getSongs() {
+export function getSongs() { 
     const filteredSongs = songs.filter(s => s.title.toLowerCase().indexOf(searchTerm) > -1 // indexOf > -1, позволяет нам при вводе букв найти песни, которые есть в существующем массиве
     || s.artist.toLowerCase().indexOf(searchTerm) > -1);
 
@@ -46,12 +46,12 @@ export function getSongs() {
 }
 
 // setter
-export function setSearchTerm(newSearchTerm) {
+export function setSearchTerm(newSearchTerm) { // это setter, который устанавливает новое значение поискового запроса (searchTerm).
     searchTerm = newSearchTerm.toLowerCase();
     subscriber();
 }
 
-export function getSearchTerm() {
+export function getSearchTerm() { // это getter, который возвращает текущее значение поискового запроса.
     return searchTerm;
 }
 

@@ -1,5 +1,7 @@
 import { createCardTransactionsElement } from "./transactions/transactions.js"
-import { createCard } from "../../data.js";
+import { CardCreationDialog } from "./dialogs/CardCreationDialog.js";
+import { cardEditingDialog } from "./dialogs/CardEditingDialog.js";
+
 export function renderCards(cards) {
   const cardContainerElement = document.createElement("div");
   const headerElement = renderCardsHeader();
@@ -23,18 +25,19 @@ export function renderCards(cards) {
 }
 
 function renderCardsHeader() {
-  const headerElement = document.createElement('h2');
+  const headerElement = document.createElement('div');
   headerElement.innerText = "Cards:";
 
+  const dialogElement = CardCreationDialog();
+  headerElement.appendChild(dialogElement);
 
   const createCardButton = document.createElement("button");
   createCardButton.innerText = "create dard";
   createCardButton.addEventListener("click", function () {
-    createCard();
+    dialogElement.open = true;
   });
-  
-  headerElement.appendChild(createCardButton);
 
+  headerElement.appendChild(createCardButton);
 
   return headerElement;
 }
@@ -45,11 +48,21 @@ function createCardElement(card) {
 
   const cardTypeElement = document.createElement('b');
   cardTypeElement.innerText = card.type + " card";
-
   cardElement.appendChild(cardTypeElement);
 
-  const br1 = document.createElement('br');
 
+  const editCardDialogElement = cardEditingDialog(card);
+  cardElement.appendChild(editCardDialogElement);
+
+  const showEditDialogButton = document.createElement('button');
+  showEditDialogButton.innerText = 'edit';
+  showEditDialogButton.addEventListener('click', function () {
+    editCardDialogElement.open = true;
+  })
+  cardElement.appendChild(showEditDialogButton);
+
+
+  const br1 = document.createElement('br');
   cardElement.appendChild(br1);
 
   let networkLogo = document.createElement('img');
@@ -100,5 +113,5 @@ function createCardElement(card) {
   expirationDateElement.innerText = card.expirationMonth + '/' + card.expirationYear;
   cardElement.appendChild(expirationDateElement);
   return cardElement;
-}
+} 
 

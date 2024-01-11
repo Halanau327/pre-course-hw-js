@@ -1,4 +1,4 @@
-export function getCurrentUser() {
+export function getCurrentUser() { // создаем функцию текущего пользователя 
     let newUser = {
         name: "Alex",
         role: "Admin",
@@ -8,6 +8,7 @@ export function getCurrentUser() {
 }
 
 let card1 = {
+    id: 1, // айди нам нужен для того, чтобы находился объект в функции updateCard (для изменения данных карточек)
     type: "debit",
     networkType: "mastercard",
     currencyType: "USD",
@@ -31,6 +32,7 @@ let card1 = {
 };
 
 let card2 = {
+    id: 2,
     type: "credit",
     networkType: "visa",
     currencyType: "EUR",
@@ -54,6 +56,7 @@ let card2 = {
 };
 
 let card3 = {
+    id: 3,
     type: "debit",
     networkType: "mastercard",
     currencyType: "GBP",
@@ -77,34 +80,39 @@ let card3 = {
     ],
 };
 
-let cards = [card1, card2, card3];
+let cards = [card1, card2, card3]; // создаем массив с карточками
 
-let dataChangedEventListener = function () {
-
+let dataChangedEventListener = function () { // инициализируем функцию-обработчик событий для обновления данных.
 };
 
-export function addEventListener(listener) {
+export function addEventListener(listener) { // коллбэк. экспортируем ее в index.js, в котором в качестве параметра используем renderApp.
     dataChangedEventListener = listener;
 }
 
-
-
-export function getCards() {
+export function getCards() { // эта функция нужна для того, чтобы перенести наш массив с объектами в index.js., для рендера в renderApp.
     return cards;
 }
 
-export function createCard() {
+export function createCard(cardNumber) { // функция для создания новой карточки.
     let newCard = {
+        id: Number(new Date()),
         type: "debit",
         networkType: "mastercard",
         currencyType: "USD",
         currentBalance: 0,
-        number: 0,
+        number: cardNumber,
         expirationYear: 0,
         expirationMonth: 0,
         isActive: false,
         transactions: [],
     };
-    cards.unshift(newCard);
+    cards.unshift(newCard); // метод unshift, применяется к массиву для того, чтобы новый элемент массива (newCard) добавить в начало, тем самым сместив существующие элементы вправо.
+    dataChangedEventListener(); // получили данные, запускаем наш RenderApp.
+}
+ 
+export function updateCard(id, newCardNumber, newCardType) { // экспортируем функцию для обновления информации о карточке.
+    const card = cards.find(card => card.id === id); // проверяем, совпадает ли значение свойства id текущей карты с заданным id. 
+    card.number = newCardNumber;
+    card.networkType = newCardType;
     dataChangedEventListener();
 }

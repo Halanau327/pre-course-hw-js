@@ -1,0 +1,20 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.headerWrapper {
+    display: flex;
+    flex-direction: row;
+    margin-left: 64px;
+    padding: 12px 0;
+    color: #F6BD41;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
+}
+
+.headerTitle {
+    margin-left: 8px;
+}
