@@ -27,13 +27,13 @@ let songs = [
     }
 ];
 
-let searchTerm = ''; // переменная, которая хранит поисковый запрос пользователя
+let searchTerm = ''; // переменная, которая хранит поисковый запрос пользователя. searchTerm позволяет нам фильтровать список песен на основе поискового запроса пользователя.
 
-let subscriber = null;
+let subscriber = null; // основная цель переменной subscriber в данном коде - установить функцию-подписчик, которая будет вызываться при изменении значения поискового запроса или направления сортировки песен.
 let sortDirection = null;
 
 // publisher-subscriber
-export function subscribe(subscriberCallback) {
+export function subscribe(subscriberCallback) { // функция subscribe() используется для установки значения переменной subscriber путем передачи функции-подписчика в качестве аргумента.
     subscriber = subscriberCallback;
 }
 
@@ -46,12 +46,12 @@ export function getSongs() {
 }
 
 // setter
-export function setSearchTerm(newSearchTerm) { // это setter, который устанавливает новое значение поискового запроса (searchTerm).
-    searchTerm = newSearchTerm.toLowerCase();
+export function setSearchTerm(newSearchTerm) { // функция используется для установки значения поискового запроса.
+    searchTerm = newSearchTerm.toLowerCase(); 
     subscriber();
 }
 
-export function getSearchTerm() { // это getter, который возвращает текущее значение поискового запроса.
+export function getSearchTerm() {
     return searchTerm;
 }
 
@@ -62,7 +62,7 @@ export function getSearchTerm() { // это getter, который возвра�
 export function setSortDirection(direction) {
     sortDirection = direction
     songs.sort((a,b) => {
-        if (direction === 'asc') return a.year -b.year;
+        if (direction === 'asc') return a.year - b.year;
         return b.year - a.year;
     });
     subscriber();

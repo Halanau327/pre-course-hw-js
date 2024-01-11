@@ -12,10 +12,15 @@ html,
 body {
     font-family: 'Rubik', sans-serif;
     font-style: normal;
+    min-width: 375px;
 }
 
 a {
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 ul {
@@ -25,6 +30,12 @@ ul {
 button {
     border: none;
     background-color: transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-5px);
 }
 
 .title {
@@ -48,6 +59,12 @@ button {
     padding: 14px 0px;
 }
 
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .menu-link {
     color: #FFFFFF;
     font-size: 12px;
@@ -55,6 +72,15 @@ button {
     line-height: 20px;
     letter-spacing: 1.4px;
     text-transform: uppercase;
+}
+
+.menu {
+    display: flex;
+    gap: 24px;
+}
+
+.menu-icon {
+    display: none;
 }
 
 /* Стили для 1-й секции */
@@ -84,11 +110,33 @@ button {
     text-transform: uppercase;
 }
 
+.main-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 800px;
+}
+
+.main-img {
+    align-self: flex-end;
+}
+
+.main .text {
+    margin-bottom: 40px;
+    max-width: 380px;
+}
+
 /* Стили для 2-й секции */
 
 .rates-section {
     background-color: #F9FAFC;
     padding: 100px 0;
+}
+
+.rates-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .rates-section .title {
@@ -175,6 +223,9 @@ td {
 form {
     width: 100%;
     max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 input,
@@ -212,6 +263,8 @@ input[type="date"],
 select {
     width: 230px;
     height: 50px;
+    flex-grow: 1;
+    cursor: pointer;
 }
 
 fieldset {
@@ -238,6 +291,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background: url(./assets/svg/Calendar.svg) no-repeat;
 }
 
+.account-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stack,
+fieldset {
+    display: flex;
+    column-gap: 30px;
+}
+
+.fields-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
 /* Стили футера */
 
 .footer {
@@ -251,4 +321,94 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 14px;
     font-weight: 400;
     line-height: 22px;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    max-width: 1170px;
+    padding: 0 15 px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid red;
+}
+
+
+/* Адаптив под планшеты */
+
+@media screen and (max-width: 1400px) {
+    .main-wrapper {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .main-info {
+        align-self: flex-start;
+        margin: 100px 0 100px;
+    }
+
+    .main-img {
+        align-self: center;
+    }
+
+    .table {
+        width: 940px;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+        width: 100%;
+        max-width: 940px;
+    }
+
+    .account-wrapper {
+        flex-direction: column;
+        gap: 70px;
+    }
+
+    .create-account-section {
+        max-width: unset;
+    }
+
+    form {
+        align-self: center;
+    }
+
+    @media screen and (max-width: 576px) {
+        
+        .menu {
+            display: none;
+        }
+
+        .menu-icon {
+            display: block;
+        }
+
+        .main-info {
+            margin: 60px 0;
+        }
+
+        .main-title {
+            font-size: 52px;
+            line-height: 60px;
+        }
+        
+        .rates-section .text {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .account-wrapper {
+            gap: 60px;
+        }
+
+        label {
+            white-space: nowrap;
+        }
+
+        fieldset {
+            flex-wrap: wrap;
+            row-gap: 20px;
+        }
+    }
 }
