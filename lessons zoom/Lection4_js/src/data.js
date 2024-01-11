@@ -62,7 +62,7 @@ export function getSearchTerm() { // функция используется д�
 export function setSortDirection(direction) {
     sortDirection = direction
     songs.sort((a,b) => {
-        if (direction === 'asc') return a.year -b.year;
+        if (direction === 'asc') return a.year - b.year;
         return b.year - a.year;
     });
     subscriber();
