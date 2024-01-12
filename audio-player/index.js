@@ -1,7 +1,8 @@
 import { subscribe } from "./data/data.js";
 import { renderHeader } from "./components/header/renderHeader.js";
-import { addPlaylist } from "./components/add-playlist/addPlaylist.js";
-import { renderPlaylistsPanels } from "./components/playlists-panels/playlistsPanels.js";
+import { addPlaylist } from "./components/add-playlist/renderAddPlaylist.js";
+import { renderPlaylistsPanels } from "./components/playlists-panels/renderPlaylistsPanels.js";
+
 
 const rootElement = document.querySelector('#root');
 
