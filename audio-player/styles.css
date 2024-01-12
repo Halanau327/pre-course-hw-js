@@ -46,11 +46,13 @@
 .searchIcon {
     background-image: url('/audio-player/src/img/input-search.png');
     background-size: cover;
-    width: 20px; /* Установите нужную ширину и высоту */
+    width: 20px;
+    /* Установите нужную ширину и высоту */
     height: 20px;
     display: inline-block;
     position: absolute;
-    pointer-events: none; /* Это предотвращает взаимодействие с иконкой */
+    pointer-events: none;
+    /* Это предотвращает взаимодействие с иконкой */
     width: 20px;
     height: 20px;
 }
@@ -80,4 +82,45 @@
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+}
+
+/* renderPlaylistCover */
+
+.coverContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.playlistContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.coverImage {
+    width: 170px;
+    border-radius: 4px;
+}
+
+.coverType {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.coverTitle {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+.coverContent {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.coverSinger {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
 }
