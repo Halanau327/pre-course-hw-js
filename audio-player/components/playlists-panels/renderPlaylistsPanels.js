@@ -1,6 +1,7 @@
 import { renderInputSearch } from "./input-search/renderInputSearch.js";
 import { renderSelect } from "./select-box/renderSelectBox.js";
 import { renderSelectSort } from "./select-sort/renderSelectSort.js";
+import { renderViewPanels } from "./view-panels/renderViewPanels.js";
 
 export function renderPlaylistsPanels() {
     const playlistsPanels = document.createElement('div');
@@ -17,6 +18,9 @@ export function renderPlaylistsPanels() {
 
     const selectSort = renderSelectSort();
     playlistsContainer.appendChild(selectSort);
+
+    const viewPanels = renderViewPanels();
+    playlistsContainer.appendChild(viewPanels);
 
     playlistsPanels.appendChild(playlistsContainer);
 
