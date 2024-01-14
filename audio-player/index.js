@@ -30,8 +30,8 @@ function renderApp() {
     }
     rootElement.appendChild(playlistContainer);
 
-    const songsData = getSongsData();
-    const songsContainer = renderSong(songsData);
+    const songsData1 = getSongsData();
+    const songsContainer = renderSong(songsData1);
     rootElement.appendChild(songsContainer);
 }
 
