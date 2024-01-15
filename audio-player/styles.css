@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: black;
+}
+
 /* header */
 
 .headerContainer {
@@ -105,22 +109,41 @@
     font-size: 14px;
     font-weight: 500;
     line-height: 24px;
+    color: #FFFFFF;
 }
 
 .coverTitle {
     font-size: 30px;
     font-weight: 700;
     line-height: 36px;
+    color: #FFFFFF;
 }
 
 .coverContent {
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
+    color: #FFFFFF;
 }
 
 .coverSinger {
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
+    color: #FFFFFF;
+}
+
+/* renderSong */
+
+.audioPlayerContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.songTime {
+    color: white;
+}
+
+.songName {
+    color: white;
 }

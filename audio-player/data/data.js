@@ -19,8 +19,8 @@ let songs = {
     song1: [
         {
             buttonImage: './src/img/vector-white.png',
-            imageOfSong: './src/img/eminem.png',
             isHit: './src/img/fire.png',
+            imageOfSong: './src/img/eminem.png',
             nameOfSong: 'Eminem - Rap God',
             buttonPlay: './src/img/play_arrow.png',
             time: '0:00 / 3:41',
@@ -40,8 +40,8 @@ let songs = {
         },
         {
             buttonImage: './src/img/vector-white.png',
-            imageOfSong: './src/img/dmx.png',
             isHit: './src/img/fire.png',
+            imageOfSong: './src/img/dmx.png',
             nameOfSong: "DMX - X Gon' Give It To Ya",
             buttonPlay: './src/img/play_arrow.png',
             time: '0:00 / 4:17',
@@ -64,8 +64,8 @@ let songs = {
     song2: [
         {
             buttonImage: './src/img/vector-white.png',
-            imageOfSong: './src/img/public-enemy.png',
             isHit: './src/img/fire.png',
+            imageOfSong: './src/img/public-enemy.png',     
             nameOfSong: 'Public Enemy - Fight the Power',
             buttonPlay: './src/img/play_arrow.png',
             time: '0:00 / 3:41',
@@ -75,8 +75,8 @@ let songs = {
         },
         {
             buttonImage: './src/img/vector-white.png',
-            imageOfSong: './src/img/vanila-ice.png',
             isHit: './src/img/fire.png',
+            imageOfSong: './src/img/vanila-ice.png',
             nameOfSong: 'Vanila Ice - Ice Ice Baby',
             buttonPlay: './src/img/play_arrow.png',
             time: '0:00 / 4:31',

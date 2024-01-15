@@ -1,0 +1,149 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+/* header */
+
+.headerContainer {
+    background-color: #1A1A1ACC;
+}
+
+.headerWrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 12px 0;
+    color: #F6BD41;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
+    margin: 0 auto;
+}
+
+.headerTitle {
+    margin-left: 8px;
+}
+
+/* add playlist */
+
+.titleWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+/* playlists panels*/
+
+.playlistsContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+/* inputSearch */
+
+.searchIcon {
+    background-image: url('/audio-player/src/img/input-search.png');
+    background-size: cover;
+    width: 20px;
+    /* Установите нужную ширину и высоту */
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    pointer-events: none;
+    /* Это предотвращает взаимодействие с иконкой */
+    width: 20px;
+    height: 20px;
+}
+
+.inputSearch {
+    width: 662px;
+    padding: 6px, 12px, 6px, 12px;
+    border-radius: 2px;
+    border: 1px solid #3F3F3F;
+    gap: 9px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+/* selectSort */
+
+.selectSortWrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.sortSelect {
+    border: none;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* renderPlaylistCover */
+
+.coverContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.playlistContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.coverImage {
+    width: 170px;
+    border-radius: 4px;
+}
+
+.coverType {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.coverTitle {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 36px;
+    color: #FFFFFF;
+}
+
+.coverContent {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.coverSinger {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+/* renderSong */
+
+.audioPlayerContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.songTime {
+    color: white;
+}
+
+.songName {
+    color: white;
+}
