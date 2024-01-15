@@ -2,6 +2,7 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    
 }
 
 body {
@@ -88,14 +89,14 @@ body {
     white-space: nowrap;
 }
 
-/* renderPlaylistCover */
+/* renderLeftPart */
 
 .coverContainer {
     display: flex;
     flex-direction: row;
 }
 
-.playlistContainer {
+.leftPartArrayContainer {
     display: flex;
     flex-direction: row;
 }
@@ -133,17 +134,15 @@ body {
     color: #FFFFFF;
 }
 
-/* renderSong */
-
 .audioPlayerContainer {
     display: flex;
     flex-direction: row;
 }
 
-.songTime {
+.songName,
+.nameOfSong,
+.songTime,
+.time {
     color: white;
 }
 
-.songName {
-    color: white;
-}

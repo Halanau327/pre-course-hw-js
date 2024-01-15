@@ -2,8 +2,7 @@ import { subscribe, getLeftPart, getRightPart } from "./data/data.js";
 import { renderHeader } from "./components/header/renderHeader.js";
 import { addPlaylist } from "./components/add-playlist/renderAddPlaylist.js";
 import { renderPlaylistsPanels } from "./components/playlists-panels/renderPlaylistsPanels.js";
-import { renderPlaylistCover } from "./components/playlists/playlist-cover/renderPlaylistCover.js";
-import { renderSong } from "./components/playlists/song/renderSong.js";
+import { renderLeftPart } from "./components/playlists/left-part/renderLeftPart.js";
 
 const rootElement = document.querySelector('#root');
 
@@ -20,19 +19,22 @@ function renderApp() {
     const panels = renderPlaylistsPanels();
     rootElement.appendChild(panels);
 
-    const playlistsArray = getPlaylistsData();
-    const playlistContainer = document.createElement('div');
-    playlistContainer.classList.add('playlistContainer');
+/* renderLeftPart start */
 
-    for (const playlistElement of playlistsArray) {
-        const playlistCover = renderPlaylistCover(playlistElement);
-        playlistContainer.appendChild(playlistCover);
+    const leftPartArray = getLeftPart();
+    const leftPartArrayContainer = document.createElement('div');
+    leftPartArrayContainer.classList.add('leftPartArrayContainer');
+
+
+    for (const leftPartArr of leftPartArray) {
+        const renderLeft = renderLeftPart(leftPartArr);
+        leftPartArrayContainer.appendChild(renderLeft);
     }
-    rootElement.appendChild(playlistContainer);
+    rootElement.appendChild(leftPartArrayContainer);
 
-    const songsData1 = getSongsData();
-    const songsContainer = renderSong(songsData1);
-    rootElement.appendChild(songsContainer);
+/* renderLeftPart end */
+
+    
 }
 
 renderApp()
