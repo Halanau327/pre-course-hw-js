@@ -92,13 +92,19 @@ export function renderLeftPart(leftPartArray) {
         time.innerText = song.time
         fifthContainer.appendChild(time);
 
+        const lineDiv = document.createElement('div');
+        lineDiv.classList.add('lineDiv');
+
         const line = document.createElement('img');
         line.classList.add('line');
+
         line.src = song.line;
-        fifthContainer.appendChild(line); 
+        lineDiv.appendChild(line); 
+
+        fifthContainer.appendChild(lineDiv);
 
         const volume = document.createElement('img');
-        line.classList.add('volume');
+        volume.classList.add('volume');
         volume.src = song.volume;
         fifthContainer.appendChild(volume); 
 

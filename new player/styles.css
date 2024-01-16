@@ -46,11 +46,12 @@ body {
 
 /* add playlist */
 
+
 .titleWrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    max-width: 1152px;
+    max-width: 1120px;
    
     color: #FFFFFF;
     padding-bottom: 29px;
@@ -90,6 +91,11 @@ body {
 
 /* inputSearch */
 
+.spanInputContainer {
+position: relative;
+
+}
+
 .searchIcon {
     background-image: url('/audio-player/src/img/input-search.png');
     background-size: cover;
@@ -97,6 +103,8 @@ body {
     height: 20px;
     display: inline-block;
     position: absolute;
+    top: 6px;
+    left: 12px;
     pointer-events: none;
     width: 20px;
     height: 20px;
@@ -105,17 +113,18 @@ body {
 .inputSearch {
     width: 662px;
     height: 36px;
-    padding: 6px, 12px, 6px, 12px;
+    
     border-radius: 2px;
     border: 1px solid #3F3F3F;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
     background-color: #1D1D1D;
+ 
 }
 
 .inputSearch::placeholder {
-    padding-left: 30px;
+    padding-left: 40px;
 }
 
 /* selectBox */
@@ -143,6 +152,7 @@ body {
 .selectSortContainer {
     display: flex;
     justify-content: space-between;
+    max-width: 126px;
 }
 
 .sortSelect {
@@ -182,7 +192,15 @@ body {
 /* viewPanels */
 
 .viewPanels {
-    margin-left: 24px;
+    margin-left: 16px;
+    width: 84px;
+    height: 36px;
+    border-radius: 2px;
+    border: 1px
+}
+
+.view1 {
+    padding-right:  12px;
 }
 
 /* renderLeftPart */
@@ -196,10 +214,14 @@ body {
     display: flex;
     flex-direction: row;
     padding-left: 64px;
-    
 }
 
 .leftPartContainer {
+    padding: 24px 36px 47px 36px;
+    background-color: #1D1D1D;
+}
+
+.rightPartContainer {
     padding: 24px 36px 47px 36px;
     background-color: #1D1D1D;
 }
@@ -288,8 +310,14 @@ body {
     display: flex;
     flex-direction: row;
     padding: 4px 24px 4px 12px;
-    background-color: black;
-    
+    background-color: #121212;
+    width: 347px;
+    border-radius: 4px;
+}
+
+.lineDiv {
+    display: flex;
+    align-items: center;
 }
 
 .nameOfSong {
@@ -317,21 +345,38 @@ body {
 }
 
 .time {
+    display: flex;
+    align-items: center;
     font-size: 10px;
     font-weight: 400;
     line-height: 12px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     text-align: center;
+    margin-left: 6px;
 }
 
 .line {
+    display: flex;
+    align-items: center;
     width: 176px;
     height: 2px;
     border-radius: 4px;
+    margin-left: 12px;
 }
 
 .volume {
-
+    margin-left: 9px;
 }
+
+.buttonProperty {
+    margin-left: 12px;
+}
+
+/* index.js */
+
+.commonPart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1152px;
+}
+
