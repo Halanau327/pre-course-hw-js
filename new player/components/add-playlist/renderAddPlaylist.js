@@ -1,5 +1,6 @@
 export function addPlaylist() {
     const titleContainer = document.createElement('div');
+    titleContainer.classList.add('titleContainer');
 
     const titleWrapper = document.createElement('div');
     titleWrapper.classList.add('titleWrapper');

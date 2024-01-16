@@ -12,8 +12,6 @@ export function renderLeftPart(leftPartArray) {
     const songsContainer = document.createElement('div');
     songsContainer.classList.add('songsContainer');
 
-  
-
 
     const coverImage = document.createElement('img');
     coverImage.classList.add('coverImage');
@@ -45,52 +43,77 @@ export function renderLeftPart(leftPartArray) {
 
     for (const song of leftPartArray.songs) {
 
+        const firstContainer = document.createElement('div')
+        firstContainer.classList.add('firstContainer')
+
+        const secondContainer = document.createElement('div');
+        secondContainer.classList.add('secondContainer');
+
         const songButtonImage = document.createElement('img');
         songButtonImage.classList.add('songButtonImage');
         songButtonImage.src = song.buttonImage;
-        songsContainer.appendChild(songButtonImage);
+        secondContainer.appendChild(songButtonImage);
+
+        const imageOfSong = document.createElement('img');
+        imageOfSong.classList.add('imageOfSong');
+        imageOfSong.src = song.imageOfSong;
+        secondContainer.appendChild(imageOfSong);
+
+        firstContainer.appendChild(secondContainer);
+
+        const thirdContainer = document.createElement('div');
+        thirdContainer.classList.add('thirdContainer');
+
+        const fourthContainer = document.createElement('div');
+        fourthContainer.classList.add('fourthContainer');
 
         if (song.isHit) {
             const isHit = document.createElement('img');
             isHit.classList.add('isHit');
             isHit.src = song.isHit;
-            songsContainer.appendChild(isHit);
+            fourthContainer.appendChild(isHit);
         }
-
-        const imageOfSong = document.createElement('img');
-        imageOfSong.classList.add('imageOfSong');
-        imageOfSong.src = song.imageOfSong;
-        songsContainer.appendChild(imageOfSong);
 
         const nameOfSong = document.createElement('p');
         nameOfSong.classList.add('nameOfSong');
         nameOfSong.innerText = song.nameOfSong
-        songsContainer.appendChild(nameOfSong);
+        fourthContainer.appendChild(nameOfSong);
+
+        const fifthContainer = document.createElement('div');
+        fifthContainer.classList.add('fifthContainer');
 
         const buttonPlay = document.createElement('img');
         buttonPlay.classList.add('buttonPlay');
         buttonPlay.src = song.buttonPlay;
-        songsContainer.appendChild(buttonPlay); 
+        fifthContainer.appendChild(buttonPlay); 
         
         const time = document.createElement('p');
         time.classList.add('time');
         time.innerText = song.time
-        songsContainer.appendChild(time);
+        fifthContainer.appendChild(time);
 
         const line = document.createElement('img');
         line.classList.add('line');
         line.src = song.line;
-        songsContainer.appendChild(line); 
+        fifthContainer.appendChild(line); 
 
         const volume = document.createElement('img');
         line.classList.add('volume');
         volume.src = song.volume;
-        songsContainer.appendChild(volume); 
+        fifthContainer.appendChild(volume); 
 
         const buttonProperty = document.createElement('img');
         buttonProperty.classList.add('buttonProperty');
         buttonProperty.src = song.buttonProperty;
-        songsContainer.appendChild(buttonProperty); 
+        fifthContainer.appendChild(buttonProperty); 
+       
+        thirdContainer.appendChild(fourthContainer);
+        thirdContainer.appendChild(fifthContainer);
+
+        firstContainer.appendChild(thirdContainer);
+
+        songsContainer.appendChild(firstContainer);
+
     };
 
     leftPartContainer.appendChild(coverContainer);

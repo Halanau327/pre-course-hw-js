@@ -1,60 +1,60 @@
 let leftPart = [
     {
-        playlistCover: {
-            image: './src/img/hip-hop-hits.png',
-            type: 'Playlist',
-            title: 'Hip-Hop Hits',
-            content: '4 tracks, 12m 13s',
-            singer: 'Eminem, 50cent, Lloyd Banks and others'
+playlistCover: {
+        image: './src/img/hip-hop-hits.png',
+        type: 'Playlist',
+        title: 'Hip-Hop Hits',
+        content: '4 tracks, 12m 13s',
+        singer: 'Eminem, 50cent, Lloyd Banks and others'
+    },
+    songs: [
+        {
+            buttonImage: './src/img/vector-white.png',
+            isHit: './src/img/fire.png',
+            imageOfSong: './src/img/eminem.png',
+            nameOfSong: 'Eminem - Rap God',
+            buttonPlay: './src/img/play_arrow.png',
+            time: '0:00 / 3:41',
+            line: './src/img/line.png',
+            volume: './src/img/volume.png',
+            buttonProperty: './src/img/option.png'
         },
-        songs: [
-            {
-                buttonImage: './src/img/vector-white.png',
-                isHit: './src/img/fire.png',
-                imageOfSong: './src/img/eminem.png',
-                nameOfSong: 'Eminem - Rap God',
-                buttonPlay: './src/img/play_arrow.png',
-                time: '0:00 / 3:41',
-                line: './src/img/line.png',
-                volume: './src/img/volume.png',
-                buttonProperty: './src/img/option.png'
-            },
-            {
-                buttonImage: './src/img/vector-white.png',
-                isHit: null,
-                imageOfSong: './src/img/50-cent.png',
-                nameOfSong: '50 cent - In da Club',
-                buttonPlay: './src/img/play_arrow.png',
-                time: '0:00 / 4:31',
-                line: './src/img/line.png',
-                volume: './src/img/volume.png',
-                buttonProperty: './src/img/option.png'
-            },
-            {
-                buttonImage: './src/img/vector-white.png',
-                isHit: './src/img/fire.png',
-                imageOfSong: './src/img/dmx.png',
-                nameOfSong: "DMX - X Gon' Give It To Ya",
-                buttonPlay: './src/img/play_arrow.png',
-                time: '0:00 / 4:17',
-                line: './src/img/line.png',
-                volume: './src/img/volume.png',
-                buttonProperty: './src/img/option.png'
-            },
-            {
-                buttonImage: './src/img/vector-white.png',
-                imageOfSong: './src/img/eminem-50cent.png',
-                nameOfSong: "Eminem feat 50 Cent, Cashis, Lloyd Banks - You Don't Know",
-                buttonPlay: './src/img/play_arrow.png',
-                time: '0:00 / 3:13',
-                line: './src/img/line.png',
-                volume: './src/img/volume.png',
-                buttonProperty: './src/img/option.png'
-            }
+        {
+            buttonImage: './src/img/vector-white.png',
+            isHit: null,
+            imageOfSong: './src/img/50-cent.png',
+            nameOfSong: '50 cent - In da Club',
+            buttonPlay: './src/img/play_arrow.png',
+            time: '0:00 / 4:31',
+            line: './src/img/line.png',
+            volume: './src/img/volume.png',
+            buttonProperty: './src/img/option.png'
+        },
+        {
+            buttonImage: './src/img/vector-white.png',
+            isHit: './src/img/fire.png',
+            imageOfSong: './src/img/dmx.png',
+            nameOfSong: "DMX - X Gon' Give It To Ya",
+            buttonPlay: './src/img/play_arrow.png',
+            time: '0:00 / 4:17',
+            line: './src/img/line.png',
+            volume: './src/img/volume.png',
+            buttonProperty: './src/img/option.png'
+        },
+        {
+            buttonImage: './src/img/vector-white.png',
+            imageOfSong: './src/img/eminem-50cent.png',
+            nameOfSong: "Eminem feat 50 Cent, Cashis, Lloyd Banks - You Don't Know",
+            buttonPlay: './src/img/play_arrow.png',
+            time: '0:00 / 3:13',
+            line: './src/img/line.png',
+            volume: './src/img/volume.png',
+            buttonProperty: './src/img/option.png'
+        }
 
-        ]
+    ]
 
-    }
+}
 ];
 
 let rightPart = {

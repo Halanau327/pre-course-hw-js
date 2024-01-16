@@ -1,5 +1,6 @@
 export function renderViewPanels() {
    const viewPanels = document.createElement('div');
+   viewPanels.classList.add('viewPanels');
 
    const view1 = document.createElement('img');
    view1.src = './src/img/first-view.png';

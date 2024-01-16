@@ -2,17 +2,29 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    
+
 }
 
 body {
     background-color: black;
+    font-family: 'SF UI Display Ultralight';
 }
+
+@font-face {
+    font-family: 'SF UI Display Ultralight';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF UI Display Ultralight'), url('./src/fonts/sf-ui-display-thin-58646e9b26e8b.woff') format('woff');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 
 /* header */
 
 .headerContainer {
     background-color: #1A1A1ACC;
+    
 }
 
 .headerWrapper {
@@ -24,10 +36,12 @@ body {
     font-weight: 700;
     line-height: 21px;
     margin: 0 auto;
+    padding-left: 64px;
+    
 }
 
 .headerTitle {
-    margin-left: 8px;
+    padding-left: 8px;
 }
 
 /* add playlist */
@@ -36,14 +50,42 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0 auto;
+    max-width: 1152px;
+   
+    color: #FFFFFF;
+    padding-bottom: 29px;
+}
+
+.titleContainer {
+    padding-top: 31px;
+    padding-left: 64px;
+}
+
+.playlistButton {
+    width: 156px;
+    height: 36px;
+    padding: 7px, 36px, 7px, 36px;
+    border-radius: 4px;
+    gap: 10px;
+    color: black;
+    background-color: #F6BD41;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
 }
 
 /* playlists panels*/
 
+.playlistsPanels {
+    padding-bottom: 24px;
+}
+
+
 .playlistsContainer {
     display: flex;
     flex-direction: row;
+    padding-left: 64px;
+    
 }
 
 /* inputSearch */
@@ -52,25 +94,43 @@ body {
     background-image: url('/audio-player/src/img/input-search.png');
     background-size: cover;
     width: 20px;
-    /* Установите нужную ширину и высоту */
     height: 20px;
     display: inline-block;
     position: absolute;
     pointer-events: none;
-    /* Это предотвращает взаимодействие с иконкой */
     width: 20px;
     height: 20px;
 }
 
 .inputSearch {
     width: 662px;
+    height: 36px;
     padding: 6px, 12px, 6px, 12px;
     border-radius: 2px;
     border: 1px solid #3F3F3F;
-    gap: 9px;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
+    background-color: #1D1D1D;
+}
+
+.inputSearch::placeholder {
+    padding-left: 30px;
+}
+
+/* selectBox */
+
+.selectBox {
+    background-color: #1D1D1D;
+    width: 210px;
+    height: 36px;
+    border: 1px solid #3F3F3F;
+    border-radius: 2px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-left: 22px;
 }
 
 /* selectSort */
@@ -80,6 +140,11 @@ body {
     flex-direction: row;
 }
 
+.selectSortContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
 .sortSelect {
     border: none;
     text-decoration: underline;
@@ -87,6 +152,37 @@ body {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    background-color: black;
+    color: #F6BD41;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+}
+
+.sortName {
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    padding-left: 24px;
+}
+
+.selectSortWrapper {
+    border: none;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* viewPanels */
+
+.viewPanels {
+    margin-left: 24px;
 }
 
 /* renderLeftPart */
@@ -99,11 +195,25 @@ body {
 .leftPartArrayContainer {
     display: flex;
     flex-direction: row;
+    padding-left: 64px;
+    
+}
+
+.leftPartContainer {
+    padding: 24px 36px 47px 36px;
+    background-color: #1D1D1D;
 }
 
 .coverImage {
     width: 170px;
     border-radius: 4px;
+    width: 170px;
+    height: 176px;
+    border-radius: 4px
+}
+
+.coverTextContainer {
+    padding-left: 24px;
 }
 
 .coverType {
@@ -111,6 +221,7 @@ body {
     font-weight: 500;
     line-height: 24px;
     color: #FFFFFF;
+    padding-bottom: 23px;
 }
 
 .coverTitle {
@@ -118,6 +229,7 @@ body {
     font-weight: 700;
     line-height: 36px;
     color: #FFFFFF;
+    padding-bottom: 10px;
 }
 
 .coverContent {
@@ -125,6 +237,7 @@ body {
     font-weight: 400;
     line-height: 24px;
     color: #FFFFFF;
+    padding-bottom: 11px;
 }
 
 .coverSinger {
@@ -146,3 +259,79 @@ body {
     color: white;
 }
 
+.songsContainer {
+    padding-top: 29px;
+}
+
+.firstContainer {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 24px;
+}
+
+.secondContainer {
+    display: flex;
+    align-items: center;
+}
+
+.thirdContainer {
+    margin-left: 12px;
+}
+
+.fourthContainer {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 9px;
+}
+
+.fifthContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 4px 24px 4px 12px;
+    background-color: black;
+    
+}
+
+.nameOfSong {
+    margin-left: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14px;
+}
+
+.imageOfSong {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    margin-left: 6px;
+}
+
+.isHit {
+    width: 12px;
+    height: 12px;
+}
+
+.buttonPlay {
+    width: 16px;
+    height: 16px;
+}
+
+.time {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.line {
+    width: 176px;
+    height: 2px;
+    border-radius: 4px;
+}
+
+.volume {
+
+}
