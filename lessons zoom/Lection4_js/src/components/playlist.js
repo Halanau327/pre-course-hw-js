@@ -10,7 +10,6 @@ export function renderPlaylist() {
         const songElement = renderSong(songs[i]);
         songsContainer.appendChild(songElement);
     }
-
-
+    
     return songsContainer;
 }

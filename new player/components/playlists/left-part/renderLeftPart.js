@@ -40,7 +40,6 @@ export function renderLeftPart(leftPartArray) {
 
     coverContainer.appendChild(coverTextContainer);
 
-
     for (const song of leftPartArray.songs) {
 
         const firstContainer = document.createElement('div')
@@ -85,8 +84,8 @@ export function renderLeftPart(leftPartArray) {
         const buttonPlay = document.createElement('img');
         buttonPlay.classList.add('buttonPlay');
         buttonPlay.src = song.buttonPlay;
-        fifthContainer.appendChild(buttonPlay); 
-        
+        fifthContainer.appendChild(buttonPlay);
+
         const time = document.createElement('p');
         time.classList.add('time');
         time.innerText = song.time
@@ -99,27 +98,26 @@ export function renderLeftPart(leftPartArray) {
         line.classList.add('line');
 
         line.src = song.line;
-        lineDiv.appendChild(line); 
+        lineDiv.appendChild(line);
 
         fifthContainer.appendChild(lineDiv);
 
         const volume = document.createElement('img');
         volume.classList.add('volume');
         volume.src = song.volume;
-        fifthContainer.appendChild(volume); 
+        fifthContainer.appendChild(volume);
 
         const buttonProperty = document.createElement('img');
         buttonProperty.classList.add('buttonProperty');
         buttonProperty.src = song.buttonProperty;
-        fifthContainer.appendChild(buttonProperty); 
-       
+        fifthContainer.appendChild(buttonProperty);
+
         thirdContainer.appendChild(fourthContainer);
         thirdContainer.appendChild(fifthContainer);
 
         firstContainer.appendChild(thirdContainer);
 
         songsContainer.appendChild(firstContainer);
-
     };
 
     leftPartContainer.appendChild(coverContainer);

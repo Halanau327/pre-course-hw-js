@@ -12,7 +12,6 @@ export function renderRightPart(rightPartArray) {
     const songsContainer = document.createElement('div');
     songsContainer.classList.add('songsContainer');
 
-
     const coverImage = document.createElement('img');
     coverImage.classList.add('coverImage');
     coverImage.src = rightPartArray.playlistCover.image;
@@ -39,7 +38,6 @@ export function renderRightPart(rightPartArray) {
     coverTextContainer.appendChild(coverSinger);
 
     coverContainer.appendChild(coverTextContainer);
-
 
     for (const song of rightPartArray.songs) {
 
@@ -85,8 +83,8 @@ export function renderRightPart(rightPartArray) {
         const buttonPlay = document.createElement('img');
         buttonPlay.classList.add('buttonPlay');
         buttonPlay.src = song.buttonPlay;
-        fifthContainer.appendChild(buttonPlay); 
-        
+        fifthContainer.appendChild(buttonPlay);
+
         const time = document.createElement('p');
         time.classList.add('time');
         time.innerText = song.time
@@ -99,27 +97,26 @@ export function renderRightPart(rightPartArray) {
         line.classList.add('line');
 
         line.src = song.line;
-        lineDiv.appendChild(line); 
+        lineDiv.appendChild(line);
 
         fifthContainer.appendChild(lineDiv);
 
         const volume = document.createElement('img');
         volume.classList.add('volume');
         volume.src = song.volume;
-        fifthContainer.appendChild(volume); 
+        fifthContainer.appendChild(volume);
 
         const buttonProperty = document.createElement('img');
         buttonProperty.classList.add('buttonProperty');
         buttonProperty.src = song.buttonProperty;
-        fifthContainer.appendChild(buttonProperty); 
-       
+        fifthContainer.appendChild(buttonProperty);
+
         thirdContainer.appendChild(fourthContainer);
         thirdContainer.appendChild(fifthContainer);
 
         firstContainer.appendChild(thirdContainer);
 
         songsContainer.appendChild(firstContainer);
-
     };
 
     rightPartContainer.appendChild(coverContainer);

@@ -114,11 +114,14 @@ let rightPart = [
 
 ];
 
+let searchTerm = '';
+
 let subscriber = null;
 
 
 export function getLeftPart() {
-    return leftPart;
+    const getFilteredLeftPart = leftPart.filter(s => s.songs.nameOfSong.toLowerCase().indexOf(searchTerm) > -1);
+    return getFilteredLeftPart;
 }
 
 export function getRightPart() {
