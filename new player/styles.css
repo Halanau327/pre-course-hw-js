@@ -2,7 +2,7 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-
+    color: white;
 }
 
 body {
@@ -42,6 +42,12 @@ body {
 
 .headerTitle {
     padding-left: 8px;
+    color:  #F6BD41;
+}
+
+.playlistImg {
+    width: 24px;
+    height: 24px;
 }
 
 /* add playlist */

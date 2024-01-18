@@ -3,6 +3,7 @@ import { renderSelect } from "./select-box/renderSelectBox.js";
 import { renderSelectSort } from "./select-sort/renderSelectSort.js";
 import { renderViewPanels } from "./view-panels/renderViewPanels.js";
 
+
 export function renderPlaylistsPanels() {
     const playlistsPanels = document.createElement('div');
     playlistsPanels.classList.add('playlistsPanels');

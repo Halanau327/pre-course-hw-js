@@ -8,7 +8,7 @@ export function renderHeader() {
 
     const playlistImg = document.createElement('img');
     playlistImg.classList.add('playlistImg');
-    playlistImg.src = '/audio-player/src/svg/playlist-img.svg';
+    playlistImg.src = '/src/svg/playlist-img.svg';
     playlistImg.alt = 'playlistImg';
     playlistImg.innerText = 'InPlaylist';
     headerWrapper.appendChild(playlistImg);

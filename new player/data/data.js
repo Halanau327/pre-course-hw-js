@@ -115,20 +115,32 @@ let rightPart = [
 ];
 
 let searchTerm = '';
-
 let subscriber = null;
-
-
-export function getLeftPart() {
-    const getFilteredLeftPart = leftPart.filter(s => s.songs.nameOfSong.toLowerCase().indexOf(searchTerm) > -1);
-    return getFilteredLeftPart;
-}
-
-export function getRightPart() {
-    return rightPart;
-}
 
 export function subscribe(subscriberCallback) {
     subscriber = subscriberCallback;
 }
+
+export function getFilteredLeftPart() {
+    const getFilteredLeftPart = leftPart.filter(item => item.songs.some(song => song.nameOfSong.toLocaleLowerCase().indexOf(searchTerm) > -1));
+    return getFilteredLeftPart;
+}
+
+export function getFilteredRightPart() {
+    const getFilteredRightPart = rightPart.filter(item => item.songs.some(song => song.nameOfSong.toLocaleLowerCase().indexOf(searchTerm) > -1));
+    return getFilteredRightPart;
+}
+
+// setter
+export function setSearchTerm(newSearchTerm) { // функция используется для установки значения поискового запроса.
+    searchTerm = newSearchTerm.toLowerCase();
+    subscriber();
+}
+
+export function getSearchTerm() {
+    return searchTerm;
+}
+
+
+
 
