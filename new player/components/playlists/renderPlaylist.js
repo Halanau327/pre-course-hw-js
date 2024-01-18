@@ -1,7 +1,7 @@
-export function renderRightPart(rightPartArray) {
+export function renderPlaylist(array) {
 
-    const rightPartContainer = document.createElement('div');
-    rightPartContainer.classList.add('rightPartContainer');
+    const playlistContainer = document.createElement('div');
+    playlistContainer.classList.add('playlistContainer');
 
     const coverContainer = document.createElement('div');
     coverContainer.classList.add('coverContainer');
@@ -12,37 +12,38 @@ export function renderRightPart(rightPartArray) {
     const songsContainer = document.createElement('div');
     songsContainer.classList.add('songsContainer');
 
+
     const coverImage = document.createElement('img');
     coverImage.classList.add('coverImage');
-    coverImage.src = rightPartArray.playlistCover.image;
+    coverImage.src = array.playlistCover.image;
     coverContainer.appendChild(coverImage);
 
     const coverType = document.createElement('p');
     coverType.classList.add('coverType');
-    coverType.innerText = rightPartArray.playlistCover.type;
+    coverType.innerText = array.playlistCover.type;
     coverTextContainer.appendChild(coverType);
 
     const coverTitle = document.createElement('p');
     coverTitle.classList.add('coverTitle');
-    coverTitle.innerText = rightPartArray.playlistCover.title;
+    coverTitle.innerText = array.playlistCover.title;
     coverTextContainer.appendChild(coverTitle);
 
     const coverContent = document.createElement('p');
     coverContent.classList.add('coverContent');
-    coverContent.innerText = rightPartArray.playlistCover.content;
+    coverContent.innerText = array.playlistCover.content;
     coverTextContainer.appendChild(coverContent);
 
     const coverSinger = document.createElement('p');
     coverSinger.classList.add('coverSinger');
-    coverSinger.innerText = rightPartArray.playlistCover.singer;
+    coverSinger.innerText = array.playlistCover.singer;
     coverTextContainer.appendChild(coverSinger);
 
     coverContainer.appendChild(coverTextContainer);
 
-    for (const song of rightPartArray.songs) {
+    for (const song of array.songs) {
 
-        const firstContainer = document.createElement('div')
-        firstContainer.classList.add('firstContainer')
+        const firstContainer = document.createElement('div');
+        firstContainer.classList.add('firstContainer');
 
         const secondContainer = document.createElement('div');
         secondContainer.classList.add('secondContainer');
@@ -119,8 +120,8 @@ export function renderRightPart(rightPartArray) {
         songsContainer.appendChild(firstContainer);
     };
 
-    rightPartContainer.appendChild(coverContainer);
-    rightPartContainer.appendChild(songsContainer);
+    playlistContainer.appendChild(coverContainer);
+    playlistContainer.appendChild(songsContainer);
 
-    return rightPartContainer;
+    return playlistContainer;
 }

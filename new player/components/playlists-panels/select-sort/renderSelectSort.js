@@ -1,3 +1,7 @@
+import { setSortDirection, sortDirection  } from "../../../data/data.js";
+
+
+
 export function renderSelectSort() {
     const selectSortContainer = document.createElement('div');
     selectSortContainer.classList.add('selectSortContainer');
@@ -12,10 +16,15 @@ export function renderSelectSort() {
 
     const sortSelect = document.createElement('select');
     sortSelect.classList.add('sortSelect');
+    sortSelect.addEventListener('change',() => {
+       const selectedOption = sortSelect.value;
+       setSortDirection(sortDirection, selectedOption.toLowerCase());
+    });
 
     const option1 = document.createElement('option');
     option1.classList.add('option1');
     option1.innerText = 'Name';
+    
     sortSelect.appendChild(option1);
 
     const option2 = document.createElement('option');

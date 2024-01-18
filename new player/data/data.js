@@ -1,4 +1,4 @@
-let leftPart = [
+let playlistArray = [
     {
         playlistCover: {
             image: './src/img/hip-hop-hits.png',
@@ -54,10 +54,7 @@ let leftPart = [
 
         ]
 
-    }
-];
-
-let rightPart = [
+    },
     {
         playlistCover: {
             image: './src/img/rap-hits-1990.png',
@@ -111,24 +108,27 @@ let rightPart = [
             }
         ]
     }
-
 ];
 
 let searchTerm = '';
+export let sortDirection = null;
 let subscriber = null;
 
 export function subscribe(subscriberCallback) {
     subscriber = subscriberCallback;
 }
 
-export function getFilteredLeftPart() {
-    const getFilteredLeftPart = leftPart.filter(item => item.songs.some(song => song.nameOfSong.toLocaleLowerCase().indexOf(searchTerm) > -1));
-    return getFilteredLeftPart;
-}
+export function getFilteredPlaylist() {
+    const regex = new RegExp(searchTerm, 'g')
+    const getFilteredPlaylist = playlistArray.map(elem=>({...elem, songs: elem.songs}))
 
-export function getFilteredRightPart() {
-    const getFilteredRightPart = rightPart.filter(item => item.songs.some(song => song.nameOfSong.toLocaleLowerCase().indexOf(searchTerm) > -1));
-    return getFilteredRightPart;
+    getFilteredPlaylist.forEach((el) => {
+        el.songs = el.songs.filter(song =>{
+            return regex.test(song.nameOfSong.toLocaleLowerCase())
+        });
+    });
+    
+    return getFilteredPlaylist;
 }
 
 // setter
@@ -141,6 +141,35 @@ export function getSearchTerm() {
     return searchTerm;
 }
 
+/**
+ * 
+ * @param {'asc' | 'desc'} direction 
+ */
+
+export function setSortDirection(direction, sortBy) { // direction указывает направление сортировки ("asc" для по возрастанию или "desc" для по убыванию), а sortBy указывает свойство, по которому нужно сортировать ("Name" или "Duration").
+    if (sortDirection === direction) {
+        sortDirection = direction === 'asc' ? 'desc' : 'asc'; // совпадает ли текущее значение sortDirection с параметром direction. Если они совпадают, то значение sortDirection переключается между "asc" и "desc".
+    } else {
+        sortDirection = direction;
+    }
+    playlistArray[0].songs.sort((a, b) => {
+        if (sortDirection === 'asc') {
+            if (sortBy === 'Name') {
+                return a.nameOfSong.localeCompare(b.nameOfSong); // Если sortDirection равно "asc" и sortBy равно "Name", используется метод localeCompare для сравнения свойства nameOfSong объектов a и b.
+            } else if (sortBy === 'Duration') {
+                return a.time.localeCompare(b.time);
+            }
+        } else if (sortDirection === 'desc') {
+            if (sortBy === 'Name') {
+                return b.nameOfSong.localeCompare(a.nameOfSong);
+            } else if (sortBy === 'Duration') {
+                return b.time.localeCompare(a.time);
+            }
+        }
+        return 0;
+    });
+    subscriber();
+};
 
 
 

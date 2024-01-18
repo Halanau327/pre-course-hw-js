@@ -209,22 +209,27 @@ position: relative;
     padding-right:  12px;
 }
 
-/* renderLeftPart */
+/* renderPlaylist */
 
 .coverContainer {
     display: flex;
     flex-direction: row;
 }
 
-.leftPartArrayContainer {
+.arrayContainer {
     display: flex;
     flex-direction: row;
     padding-left: 64px;
 }
 
-.leftPartContainer {
+.playlistContainer {
     padding: 24px 36px 47px 36px;
     background-color: #1D1D1D;
+    
+}
+
+.playlistContainer + .playlistContainer {
+    margin-left: 12px;
 }
 
 .rightPartContainer {
