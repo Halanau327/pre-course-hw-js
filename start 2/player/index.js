@@ -1,16 +1,12 @@
-import { renderPlaylist } from "./playlist/renderPlaylist.js";
-import { getPlaylist } from "./data.js/data.js";
+import { renderPlaylist } from "./components/playlist/renderPlaylist.js";
+
 
 const rootElement = document.querySelector('#root');
 
 function renderApp() {
 
-    const playlistArray = getPlaylist();
-
-    const renderplst = renderPlaylist(playlistArray);
-
-    rootElement.appendChild(renderplst);
-
+const renderPlst = renderPlaylist();
+rootElement.appendChild(renderPlst);
 };
 
 renderApp()

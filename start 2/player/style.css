@@ -2,4 +2,35 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    color: white;
+}
+
+body {
+    background-color: black;
+    font-family: 'SF UI Display Ultralight';
+}
+
+@font-face {
+    font-family: 'SF UI Display Ultralight';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF UI Display Ultralight'), url('./src/fonts/sf-ui-display-thin-58646e9b26e8b.woff') format('woff');
+}
+
+/* renderHeader */
+
+.commonHeader {
+    display: flex;
+    flex-direction: row;
+}
+
+.headerContainer {
+    margin-left: 12px;
+}
+
+/* renderPlaylist */
+
+.commonPlaylistContainer {
+    display: flex;
+    flex-direction: row;
 }
