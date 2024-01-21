@@ -1,12 +1,19 @@
-import { renderPlaylist } from "./components/playlist/renderPlaylist.js";
-
+import { renderHeader } from "./components/header/renderPlaylistHeader.js";
+import { renderPlaylists } from "./components/playlists/renderplaylists.js";
+import { getPlaylists } from "./data.js/data.js";
 
 const rootElement = document.querySelector('#root');
 
 function renderApp() {
 
-const renderPlst = renderPlaylist();
-rootElement.appendChild(renderPlst);
+    const header = renderHeader();
+    rootElement.appendChild(header);
+
+    const playlistsArray = getPlaylists()
+
+    const playlists = renderPlaylists(playlistsArray);
+    rootElement.appendChild(playlists);
+
 };
 
 renderApp()
