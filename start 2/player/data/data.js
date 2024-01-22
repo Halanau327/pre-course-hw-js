@@ -1,10 +1,12 @@
 let playlists = [
     {
-        title: 'Hip-Hop Hits',
         coverImageUrl: '/src/img/hip-hop-hits.png',
         info: {
+            infoName: 'Playlist',
+            title: 'Hip-Hop Hits',
             totalTracksCount: 4,
             totalTracksDurationInSeconds: 733,
+            artistsOfPlaylist: 'Eminem, 50cent, Lloyd Banks and others'
         },
         tracks: [
             {
@@ -42,11 +44,13 @@ let playlists = [
         ]
     },
     {
-        title: 'Rap Hits 1990s',
         coverImageUrl: '/src/img/rap-hits-1990.png',
         info: {
+            infoName: 'Playlist',
+            title: 'Rap Hits 1990s',
             totalTracksCount: 4,
             totalTracksDurationInSeconds: 733,
+            artistsOfPlaylist: 'Eminem, 50cent, Lloyd Banks and others'
         },
         tracks: [
             {

@@ -53,6 +53,70 @@ body {
     flex-direction: row;
 }
 
+.plstContainer {
+    padding: 24px 36px 47px 36px;
+    background-color: #1D1D1D;
+}
+
+.plstContainer + .plstContainer {
+    margin-left: 12px;
+}
+
+
+
+
+/* renderHeaderPlaylist */
+.headerPlaylistContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.headerPlaylistLeftContainer {
+    padding-left: 24px;
+}
+
+.headerPlaylistCoverImage {
+    width: 170px;
+    border-radius: 4px;
+    width: 170px;
+    height: 176px;
+    border-radius: 4px
+}
+
+.headerPlaylistInfoName {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #FFFFFF;
+    padding-bottom: 23px;
+}
+
+.headerPlaylistTitle {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 36px;
+    color: #FFFFFF;
+    padding-bottom: 10px;
+}
+
+.headerPlaylistCount  {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #FFFFFF;
+    padding-bottom: 11px; 
+}
+
+.headerPlaylistArtists {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+
+
+
 /* renderTrack */
 
 .audioElement {
