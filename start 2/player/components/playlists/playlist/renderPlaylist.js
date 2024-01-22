@@ -8,11 +8,11 @@ export function renderPlaylist(playlistArray) {
     const headerPlaylist = renderHeaderPlaylist(playlistArray);
     plstContainer.appendChild(headerPlaylist);
 
-   for(let i = 0; i < playlistArray.tracks.length; i++) {
+    for (let i = 0; i < playlistArray.tracks.length; i++) {
 
-    const trackPlaylist = renderTrack(playlistArray.tracks[i]);
-    plstContainer.appendChild(trackPlaylist);
-}
+        const trackPlaylist = renderTrack(playlistArray.tracks[i]);
+        plstContainer.appendChild(trackPlaylist);
+    }
 
     return plstContainer;
 }

@@ -33,12 +33,12 @@ body {
     line-height: 21px;
     margin: 0 auto;
     padding-left: 64px;
-    
+
 }
 
 .headerTitle {
     padding-left: 8px;
-    color:  #F6BD41;
+    color: #F6BD41;
 }
 
 .playlistImg {
@@ -53,3 +53,174 @@ body {
     flex-direction: row;
 }
 
+/* renderTrack */
+
+.audioElement {
+    width: 347px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: #1A1A1ACC;
+}
+
+.nameOfTrackContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.trackContainer {
+    display: flex;
+}
+
+/* playlists panels*/
+
+.playlistsPanels {
+    padding-bottom: 24px;
+}
+
+
+.playlistsContainer {
+    display: flex;
+    flex-direction: row;
+    padding-left: 64px;
+}
+
+/* inputSearch */
+
+.spanInputContainer {
+    position: relative;
+}
+
+.searchIcon {
+    background-image: url('/src/img/input-search.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+    left: 12px;
+    pointer-events: none;
+    width: 20px;
+    height: 20px;
+}
+
+.inputSearch {
+    width: 662px;
+    height: 36px;
+    border-radius: 2px;
+    border: 1px solid #3F3F3F;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: #1D1D1D;
+
+}
+
+.inputSearch::placeholder {
+    padding-left: 40px;
+}
+
+/* selectBox */
+
+.selectBox {
+    background-color: #1D1D1D;
+    width: 210px;
+    height: 36px;
+    border: 1px solid #3F3F3F;
+    border-radius: 2px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-left: 22px;
+}
+
+/* selectSort */
+
+.selectSortWrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.selectSortContainer {
+    display: flex;
+    justify-content: space-between;
+    max-width: 126px;
+}
+
+.sortSelect {
+    border: none;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: black;
+    color: #F6BD41;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+}
+
+.sortName {
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    padding-left: 24px;
+}
+
+.selectSortWrapper {
+    border: none;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* viewPanels */
+
+.viewPanels {
+    margin-left: 16px;
+    width: 84px;
+    height: 36px;
+    border-radius: 2px;
+    border: 1px
+}
+
+.view1 {
+    padding-right: 12px;
+}
+
+/* add playlist */
+
+.titleWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1120px;
+    color: #FFFFFF;
+    padding-bottom: 29px;
+}
+
+.titleContainer {
+    padding-top: 31px;
+    padding-left: 64px;
+}
+
+.playlistButton {
+    width: 156px;
+    height: 36px;
+    padding: 7px, 36px, 7px, 36px;
+    border-radius: 4px;
+    gap: 10px;
+    color: black;
+    background-color: #F6BD41;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}

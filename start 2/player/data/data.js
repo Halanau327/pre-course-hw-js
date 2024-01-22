@@ -36,7 +36,7 @@ let playlists = [
                 coverImageUrl: '/src/img/eminem-50cent.png',
                 artistName: 'Eminem feat 50 Cent, Cashis, Lloyd Banks',
                 title: "You Don't Know",
-                fileUrl: "/src/songs/hiphop hits/Eminem You Don't Know Ft 50 Cent.mp3",
+                fileUrl: "/src/songs/hiphop hits/Eminem You Don't Know Ft 50 Cent .mp3",
                 inTrend: false
             }
         ]
@@ -86,6 +86,8 @@ let playlists = [
 
 ]
 
+let searchTerm = '';
+export let sortDirection = null;
 let subscriber = null;
 
 export function subscribe(subscriberCallback) {
@@ -95,4 +97,40 @@ export function subscribe(subscriberCallback) {
 export function getPlaylists() {
     return playlists;
 }
+
+// setter
+export function setSearchTerm(newSearchTerm) { // функция используется для установки значения поискового запроса.
+    searchTerm = newSearchTerm.toLowerCase();
+    subscriber();
+}
+
+export function getSearchTerm() {
+    return searchTerm;
+}
+
+export function setSortDirection(direction, sortBy) { // direction указывает направление сортировки ("asc" для по возрастанию или "desc" для по убыванию), а sortBy указывает свойство, по которому нужно сортировать ("Name" или "Duration").
+    if (sortDirection === direction) {
+        sortDirection = direction === 'asc' ? 'desc' : 'asc'; // совпадает ли текущее значение sortDirection с параметром direction. Если они совпадают, то значение sortDirection переключается между "asc" и "desc".
+    } else {
+        sortDirection = direction;
+    }
+    playlistArray[0].songs.sort((a, b) => {
+        if (sortDirection === 'asc') {
+            if (sortBy === 'Name') {
+                return a.nameOfSong.localeCompare(b.nameOfSong); // Если sortDirection равно "asc" и sortBy равно "Name", используется метод localeCompare для сравнения свойства nameOfSong объектов a и b.
+            } else if (sortBy === 'Duration') {
+                return a.time.localeCompare(b.time);
+            }
+        } else if (sortDirection === 'desc') {
+            if (sortBy === 'Name') {
+                return b.nameOfSong.localeCompare(a.nameOfSong);
+            } else if (sortBy === 'Duration') {
+                return b.time.localeCompare(a.time);
+            }
+        }
+        return 0;
+    });
+    subscriber();
+};
+
 
