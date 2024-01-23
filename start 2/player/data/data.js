@@ -108,9 +108,25 @@ export function subscribe(subscriberCallback) {
     subscriber = subscriberCallback;
 }
 
+// getter
 export function getPlaylists() {
-    return playlists;
+    const filteredPlaylists = playlists.map((playlist) => {
+        const filteredTracks = playlist.tracks.filter((track) => {
+            const artistMatch = track.artistName.toLowerCase().includes(searchTerm);
+            const titleMatch = track.title.toLowerCase().includes(searchTerm);
+            return artistMatch || titleMatch; //трек будет включен в отфильтрованный список, если хотя бы одно из условий выполняется.
+        });
+
+        return {
+            ...playlist,
+            tracks: filteredTracks // переопределяем свойство tracks и присваиваем ему значение filteredTracks.
+        };
+    });
+
+    return filteredPlaylists;
 }
+
+
 
 // setter
 export function setSearchTerm(newSearchTerm) { // функция используется для установки значения поискового запроса.
@@ -118,7 +134,7 @@ export function setSearchTerm(newSearchTerm) { // функция использ�
     subscriber();
 }
 
-export function getSearchTerm() {
+export function getSearchTerm() { 
     return searchTerm;
 }
 /**

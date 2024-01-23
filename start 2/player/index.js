@@ -1,6 +1,6 @@
 import { subscribe } from "./data/data.js";
 import { renderHeader } from "./components/header/renderPlaylistHeader.js";
-import { renderPlaylists } from "./components/playlists/renderPlaylists.js";
+import { renderPlaylists } from "./components/playlists/renderplaylists.js";
 import { getPlaylists } from "./data/data.js";
 import { renderPlaylistsPanels } from "./components/playlists-panels/renderPlaylistsPanels.js";
 import { addPlaylist } from "./components/add-playlist/renderAddPlaylist.js";

@@ -1,4 +1,4 @@
-import { getSearchTerm } from "../../../data/data.js";
+import { getSearchTerm, setSearchTerm } from "../../../data/data.js";
 
 
 export function renderInputSearch() {
