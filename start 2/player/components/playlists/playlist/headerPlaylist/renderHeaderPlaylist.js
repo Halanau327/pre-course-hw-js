@@ -34,6 +34,11 @@ export function renderHeaderPlaylist(headerPlaylistArray) {
     headerPlaylistArtists.textContent = headerPlaylistArray.info.artistsOfPlaylist;
     headerPlaylistLeftContainer.appendChild(headerPlaylistArtists);
 
+    const spanOthersElement = document.createElement('span');
+    spanOthersElement.textContent = headerPlaylistArray.info.others;
+    spanOthersElement.style.color = '#8A8A8A'; 
+    headerPlaylistLeftContainer.appendChild(spanOthersElement);
+
     headerPlaylistContainer.appendChild(headerPlaylistLeftContainer);
 
     return headerPlaylistContainer;

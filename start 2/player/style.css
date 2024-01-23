@@ -33,7 +33,6 @@ body {
     line-height: 21px;
     margin: 0 auto;
     padding-left: 64px;
-
 }
 
 .headerTitle {
@@ -51,19 +50,16 @@ body {
 .playlistsContainer {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    margin-left: 64px;
+    max-width: 1152px;
 }
 
 .plstContainer {
     padding: 24px 36px 47px 36px;
     background-color: #1D1D1D;
+    width: 570px;
 }
-
-.plstContainer + .plstContainer {
-    margin-left: 12px;
-}
-
-
-
 
 /* renderHeaderPlaylist */
 .headerPlaylistContainer {
@@ -80,7 +76,8 @@ body {
     border-radius: 4px;
     width: 170px;
     height: 176px;
-    border-radius: 4px
+    border-radius: 4px;
+    margin-bottom: 29px;
 }
 
 .headerPlaylistInfoName {
@@ -99,12 +96,12 @@ body {
     padding-bottom: 10px;
 }
 
-.headerPlaylistCount  {
+.headerPlaylistCount {
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
-    color: #FFFFFF;
-    padding-bottom: 11px; 
+    color: #8A8A8A;
+    padding-bottom: 11px;
 }
 
 .headerPlaylistArtists {
@@ -113,9 +110,6 @@ body {
     line-height: 24px;
     color: #FFFFFF;
 }
-
-
-
 
 /* renderTrack */
 
@@ -129,23 +123,40 @@ body {
 .nameOfTrackContainer {
     display: flex;
     flex-direction: row;
+    padding-bottom: 9px;
 }
 
 .trackContainer {
     display: flex;
+    margin-bottom: 24px;
+}
+
+.imagesTracksContainer {
+    display: flex;
+}
+
+.buttonTrackImageContainer {
+    display: flex;
+    align-items: center;
+}
+
+.commonNameOfTrackContainer {
+    padding-left: 12px;
+}
+
+.coverTrackImage {
+    padding-left: 14px;
+    border-radius: 4px
+}
+
+.trackElement {
+    padding-left: 1px;
 }
 
 /* playlists panels*/
 
 .playlistsPanels {
     padding-bottom: 24px;
-}
-
-
-.playlistsContainer {
-    display: flex;
-    flex-direction: row;
-    padding-left: 64px;
 }
 
 /* inputSearch */
@@ -177,11 +188,7 @@ body {
     font-weight: 400;
     line-height: 24px;
     background-color: #1D1D1D;
-
-}
-
-.inputSearch::placeholder {
-    padding-left: 40px;
+    text-indent: 40px; 
 }
 
 /* selectBox */
@@ -209,7 +216,6 @@ body {
 .selectSortContainer {
     display: flex;
     justify-content: space-between;
-    max-width: 126px;
 }
 
 .sortSelect {
@@ -249,6 +255,7 @@ body {
 /* viewPanels */
 
 .viewPanels {
+    display: flex;
     margin-left: 16px;
     width: 84px;
     height: 36px;
@@ -266,7 +273,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    max-width: 1120px;
+    max-width: 1152px;
     color: #FFFFFF;
     padding-bottom: 29px;
 }

@@ -1,3 +1,4 @@
+import { subscribe } from "./data/data.js";
 import { renderHeader } from "./components/header/renderPlaylistHeader.js";
 import { renderPlaylists } from "./components/playlists/renderPlaylists.js";
 import { getPlaylists } from "./data/data.js";
@@ -7,6 +8,7 @@ import { addPlaylist } from "./components/add-playlist/renderAddPlaylist.js";
 const rootElement = document.querySelector('#root');
 
 function renderApp() {
+    rootElement.innerHTML = '';
 
     const header = renderHeader();
     rootElement.appendChild(header);
@@ -21,9 +23,8 @@ function renderApp() {
 
     const playlists = renderPlaylists(playlistsArray);
     rootElement.appendChild(playlists);
-
 };
 
 renderApp()
-
+    
 subscribe(renderApp);
