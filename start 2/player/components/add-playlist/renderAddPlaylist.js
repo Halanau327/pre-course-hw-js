@@ -1,3 +1,5 @@
+import { sortTracks } from "../../data/data.js";
+
 export function addPlaylist() {
     const titleContainer = document.createElement('div');
     titleContainer.classList.add('titleContainer');
@@ -13,6 +15,7 @@ export function addPlaylist() {
     const playlistButton = document.createElement('button');
     playlistButton.classList.add('playlistButton');
     playlistButton.innerText = 'Add Playlist';
+
     titleWrapper.appendChild(playlistButton);
 
     titleContainer.appendChild(titleWrapper);

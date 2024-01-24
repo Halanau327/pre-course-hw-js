@@ -126,6 +126,8 @@ export function getPlaylists() {
     return filteredPlaylists;
 }
 
+
+
 // setter
 export function setSearchTerm(newSearchTerm) { // функция используется для установки значения поискового запроса.
     searchTerm = newSearchTerm.toLowerCase();
@@ -157,5 +159,36 @@ export function sortTracks(selectedOption) {
     }
     subscriber();
 }
+
+// /**
+//  * 
+//  * @param {'asc' | 'desc'} direction 
+//  */
+// export function setSortDirection(direction, sortBy) { // direction указывает направление сортировки ("asc" для по возрастанию или "desc" для по убыванию), а sortBy указывает свойство, по которому нужно сортировать ("Name" или "Duration").
+//     sortDirection = direction;
+//     for (let i = 0; i < playlists.length; i++) {
+//         const playlistSongs = playlists[i].tracks;
+//         playlistSongs.sort((a, b) => {
+//             if (sortDirection === 'asc') {
+//                 if (sortBy === 'Name') {
+//                     return a.artistName.localeCompare(b.artistName); // Если sortDirection равно "asc" и sortBy равно "Name", используется метод localeCompare для сравнения свойства nameOfSong объектов a и b.
+//                 } else if (sortBy === 'Duration') {
+//                     return a.tracksDurationInSeconds - (b.tracksDurationInSeconds);
+//                 }
+//             } else if (sortDirection === 'desc') {
+//                 if (sortBy === 'Name') {
+//                     return b.artistName.localeCompare(a.artistName);
+//                 } else if (sortBy === 'Duration') {
+//                     return b.tracksDurationInSeconds - (a.tracksDurationInSeconds);
+//                 }
+//             }
+//             return 0;
+//         });
+//     }
+//     subscriber();
+// }
+
+
+
 
 

@@ -26,7 +26,7 @@ export function renderSelectSort() {
   option2.innerText = 'Duration';
   sortSelect.appendChild(option2);
 
-  sortSelect.addEventListener('change', function () {
+  sortSelect.addEventListener('change', () => {
     const selectedOption = sortSelect.value;
     sortTracks(selectedOption);
   });
