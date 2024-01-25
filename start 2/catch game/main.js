@@ -1,10 +1,14 @@
 import { Game } from './ui/game.component.js'
+import { subscribe } from './data/game.data.js'
+
+subscribe(renderApp);
 
 
-const gameEl = Game();
 
 function renderApp() {
     document.body.innerHTML = ""
+    
+    const gameEl = Game();
     document.body.append(gameEl);
 }
 
