@@ -66,7 +66,7 @@ function moveOfferToRandomPosition() {
 
 function miss() {
     data.status = OFFER_STATUSES.missed;
-    data.score.missCount++;
+    data.score.missCount++
 
     data.coords.previous = {
         ...data.coords.current
