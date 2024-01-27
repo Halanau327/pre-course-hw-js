@@ -1,5 +1,3 @@
-
-
 export const OFFER_STATUSES = {
     default: 'default',
     missed: 'missed',
@@ -17,7 +15,7 @@ export const data = {
     },
     rowsCount: 3,
     columnsCount: 3,
-    status: OFFER_STATUSES.default,
+    status: OFFER_STATUSES.caught,
     coords: {
         current: {
             x: 1,
@@ -34,51 +32,71 @@ export const data = {
     }
 }
 
-let subscriber = function () {
+let subscribers = [];
 
+function notify() {
+    subscribers.forEach(subscriber => subscriber())
 }
 
 export function subscribe(newSubscriber) {
-    subscriber = newSubscriber;
+    subscribers.push(newSubscriber);
 }
 
-setInterval(() => {
-    moveOfferToRandomPosition();
-}, 1000);
+let stepIntervalId;
 
+function runStepInterval() {
+    stepIntervalId = setInterval(() => {
+        missOffer()
+        moveOfferToRandomPosition(true);
+        notify();
+    }, 2000);
+}
+runStepInterval();
 
 function moveOfferToRandomPosition() {
     let newX = null;
     let newY = null;
 
-    do {
-        newX = getRandom(data.settings.columnsCount - 1);
+    do { // выполняется генерация рандомного положения офера, пока координаты рандома не будут равны координатам newX и newY
+        newX = getRandom(data.settings.columnsCount - 1); // любой рандом из существующих по дефолту (settings.columnsCount) ячеек оси Х
         newY = getRandom(data.settings.rowsCount - 1);
     } while (data.coords.current.x === newX && data.coords.current.y === newY);
 
-    miss();
-
-    data.coords.current.x = newX;
+    data.coords.current.x = newX; //обновляет текущие координаты офера на новые случайные значения, не совпадающие с текущими координатами
     data.coords.current.y = newY;
+};
 
-    subscriber();
-}
-
-function miss() {
+function missOffer() {
     data.status = OFFER_STATUSES.missed;
-    data.score.missCount++
+    data.score.missCount++;
 
-    data.coords.previous = {
+    data.coords.previous = { // предыдущие координаты оффера будут равны координатом offer missed (на предлыдущем месте офера появится оффер миссед)
         ...data.coords.current
-    };
-
+    }
 
     setTimeout(() => {
         data.status = OFFER_STATUSES.default;
-        subscriber();
+        notify();
     }, 200);
 }
 
+export function catchOffer() {
+    data.status = OFFER_STATUSES.caught;
+    data.score.caughtCount++;
+
+    data.coords.previous = { // предыдущие координаты оффера будут равны координатом offer missed (на предлыдущем месте офера появится оффер миссед)
+        ...data.coords.current
+    }
+    setTimeout(() => {
+        data.status = OFFER_STATUSES.default;
+        notify();
+    }, 200);
+
+    moveOfferToRandomPosition();
+    notify();
+    clearInterval(stepIntervalId);
+    runStepInterval();
+}
 
 function getRandom(N) {
     return Math.floor(Math.random() * (N + 1));
