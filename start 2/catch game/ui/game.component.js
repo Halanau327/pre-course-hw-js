@@ -5,7 +5,7 @@ import {Grid} from './grid/grid.component.js'
 export function Game() {
     const containerElement = document.createElement('div');
 
-    const settingsElement = Settings();
+    const settingsElement = Settings(); // настройки нашей игры (количество ячеек, миссов, попаданий итд)
     containerElement.append(settingsElement);
 
     const scoresElement = Scores();

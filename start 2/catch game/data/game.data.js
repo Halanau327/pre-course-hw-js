@@ -18,8 +18,8 @@ export const data = {
     status: OFFER_STATUSES.caught,
     coords: {
         current: {
-            x: 1,
-            y: 2,
+            x: 3,
+            y: 4,
         },
         previous: {
             x: 0,
@@ -47,10 +47,11 @@ let stepIntervalId;
 function runStepInterval() {
     stepIntervalId = setInterval(() => {
         missOffer()
-        moveOfferToRandomPosition(true);
+        moveOfferToRandomPosition();
         notify();
     }, 2000);
 }
+
 runStepInterval();
 
 function moveOfferToRandomPosition() {

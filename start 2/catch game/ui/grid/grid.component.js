@@ -16,6 +16,5 @@ export function Grid() {
 
     }
 
-
     return containerElement;
 }
