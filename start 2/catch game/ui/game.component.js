@@ -1,18 +1,19 @@
-import {Settings} from './settings/settings.component.js'
-import {Scores} from './scores/scores.component.js'
-import {Grid} from './grid/grid.component.js'
+import {Settings} from './game.settings.js'
+import {Scores} from './game/scores/scores.component.js'
+import {Grid} from './game/grid/grid.component.js'
 
 export function Game() {
     const containerElement = document.createElement('div');
+    containerElement.classList.add('containerGameElement')
 
-    const settingsElement = Settings(); // настройки нашей игры (количество ячеек, миссов, попаданий итд)
-    containerElement.append(settingsElement);
+    const settingsElement = Settings(); 
+    containerElement.appendChild(settingsElement);
 
     const scoresElement = Scores();
-    containerElement.append(scoresElement);
-
+    containerElement.appendChild(scoresElement);
+    
     const gridElement = Grid();
-    containerElement.append(gridElement);
+    containerElement.appendChild(gridElement);
 
     return containerElement;
 }

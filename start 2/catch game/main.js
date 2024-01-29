@@ -6,11 +6,13 @@ Player();
 
 subscribe(renderApp);
 
+const rootElement = document.querySelector('#root');
+
 function renderApp() {
-    document.body.innerHTML = ""
+    rootElement.innerHTML = '';
 
     const gameEl = Game();
-    document.body.append(gameEl);
+    rootElement.appendChild(gameEl);
 }
 
 renderApp();

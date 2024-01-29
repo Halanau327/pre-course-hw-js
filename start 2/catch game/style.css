@@ -1,0 +1,14 @@
+/* game */
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    color: white;
+   
+    background-position: cover;
+}
+
+html {
+    background: radial-gradient(159.5% 216.64% at 96.21% 166.59%, #4CA1D2 0%, #285BAE 100%);
+    height: 100%;
+}

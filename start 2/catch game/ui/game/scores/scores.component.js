@@ -1,4 +1,4 @@
-import { data } from "../../data/game.data.js";
+import { data } from "../../../data/game.data.js";
 
 export function Scores() {
     const containerElement = document.createElement('div');

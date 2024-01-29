@@ -1,4 +1,4 @@
-import { OFFER_STATUSES, data, catchOffer } from "../../../data/game.data.js";
+import { OFFER_STATUSES, data, catchOffer } from "/data/game.data.js"
 
 export function Cell(x, y) {
     const cellEl = document.createElement('td');
