@@ -8,4 +8,25 @@ export function setGridElement() {
     paragraphGridElement.classList.add('paragraphGridElement');
     paragraphGridElement.textContent = 'Grid size';
     gridContainer.appendChild(paragraphGridElement);
+
+    const selectGridElement = document.createElement('select');
+    selectGridElement.classList.add('selectGridElement');
+
+    const optionGridElement = settingsData.gridSize.map((size, index) => {
+        const optionElement = document.createElement('option');
+        optionElement.innerHTML = `${size.width} * ${size.height}`;
+        optionElement.value = index;
+        return optionElement;
+    });
+
+    selectGridElement.addEventListener('change', (element) => {
+        let selectedIndex = element.currentTarget.value;
+        const size = settingsData.gridSize[selectedIndex];
+    });
+
+    selectGridElement.appendChild(...optionGridElement);
+    gridContainer.appendChild(selectGridElement);
+
+
+    return gridContainer;
 }
