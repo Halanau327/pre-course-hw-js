@@ -141,7 +141,7 @@ export function getSearchTerm() {
 export function sortTracks(selectedOption) {
     let tracks;
     if (selectedOption === 'Name') {
-      tracks = playlists.flatMap((playlist) => playlist.tracks);
+      tracks = playlists.flatMap((playlist) => playlist.tracks); //используется метод flatMap, чтобы преобразовать массив плейлистов (playlists) в одномерный массив всех треков
       tracks.sort((a, b) => {
         const nameA = a.title.toLowerCase();
         const nameB = b.title.toLowerCase();
@@ -192,3 +192,38 @@ export function sortTracks(selectedOption) {
 
 
 
+// export function sortTracks(selectedOption) {
+//     let tracks;
+//     if (selectedOption === 'Name') {
+//       tracks = playlists.flatMap((playlist) => playlist.tracks);
+//       tracks.sort((a, b) => {
+//         const nameA = a.title.toLowerCase();
+//         const nameB = b.title.toLowerCase();
+//         if (nameA < nameB) return -1;
+//         if (nameA > nameB) return 1;
+//         return 0;
+//       });
+  
+//       // Обновление свойства tracks в каждом плейлисте
+//       playlists.forEach((playlist) => {
+//         playlist.tracks = tracks.filter((track) =>
+//           playlist.tracks.includes(track)
+//         );
+//       });
+//     } else if (selectedOption === 'Duration') {
+//       tracks = playlists.flatMap((playlist) => playlist.tracks);
+//       tracks.sort((a, b) => {
+//         const durationA = a.tracksDurationInSeconds;
+//         const durationB = b.tracksDurationInSeconds;
+//         return durationA - durationB;
+//       });
+  
+//       // Обновление свойства tracks в каждом плейлисте
+//       playlists.forEach((playlist) => {
+//         playlist.tracks = tracks.filter((track) =>
+//           playlist.tracks.includes(track)
+//         );
+//       });
+//     }
+//     subscriber();
+//   }

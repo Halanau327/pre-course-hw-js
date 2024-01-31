@@ -3,7 +3,7 @@ import { setSearchTerm, getSearchTerm } from "../../data.js";
 export function renderSearchInput() {
     const searchInput = document.createElement("input");
     searchInput.placeholder = 'artist or song name';
-    searchInput.value = getSearchTerm(); // эта функция возвращает текущий поисковый запрос, который будет отображаться в текстовом поле при его создании.
+    searchInput.value = getSearchTerm(); // Устанавливаем значение поля ввода равным текущему поисковому запросу, используя функцию getSearchTerm(). Таким образом, если у пользователя уже был введен поисковый запрос, он будет отображаться в поле ввода при создании.
     searchInput.addEventListener('input', () => {
         setSearchTerm(searchInput.value);
     });
