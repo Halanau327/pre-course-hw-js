@@ -6,6 +6,7 @@ export const settingsData = {
         { width: 6, height: 6 },
         { width: 7, height: 7 },
         { width: 8, height: 8 },
+        { width: 9, height: 9 },
     ],
     winPointd: [
         20,
